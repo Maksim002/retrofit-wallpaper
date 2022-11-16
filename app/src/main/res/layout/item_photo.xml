@@ -22,5 +22,4 @@
         android:visibility="visible"
         android:src="@drawable/ic_launcher_background"
         tools:ignore="InefficientWeight" />
-
 </LinearLayout>
