@@ -22,14 +22,13 @@ class MainViewModel(var presente: ViewPresenter) : ViewModel() {
         service.getMealPlanse(host, key, int)
             .enqueue(object : Callback<List<WallModel>> {
                 @RequiresApi(Build.VERSION_CODES.M)
-                override fun onResponse(
-                    call: Call<List<WallModel>>,
-                    response: Response<List<WallModel>>
-                ) {
+                override fun onResponse(call: Call<List<WallModel>>, response: Response<List<WallModel>>) {
+                    //200
                     presente.getPhoto(response.body() ?: arrayListOf())
                 }
 
                 override fun onFailure(call: Call<List<WallModel>>, t: Throwable) {
+                    //400/500/300
                     t.printStackTrace()
                 }
             })
